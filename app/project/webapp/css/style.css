@@ -1,0 +1,13 @@
+.buttonContainer {
+    padding: 50px;
+}
+
+.styledButton {
+    width: 300px !important;
+    height: 150px !important;
+    min-height: 150px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+
+}

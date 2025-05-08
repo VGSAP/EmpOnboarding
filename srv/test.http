@@ -1,0 +1,17 @@
+###
+
+GET http://localhost:4004/odata/v4/onboarding/Employee
+
+###
+
+POST http://localhost:4004/odata/v4/onboarding/Employee
+Content-Type: application/json
+
+{
+    "ID" : "10",
+    "FullName" : "Rahul",
+    "Email" : "rahul.gmail.com"
+}
+
+###
+GET http://localhost:4004/odata/v4/onboarding/HRVerification
