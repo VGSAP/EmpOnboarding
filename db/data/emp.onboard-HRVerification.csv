@@ -1,6 +1,0 @@
-ID,EmployeeID_ID,VerifiedByHR,HRComments,VerifiedDate
-1,1,TRUE,All documents verified successfully.,2024-06-18
-2,2,TRUE,Background check passed.,2024-06-19
-3,3,FALSE,Incomplete document submission.,2024-06-20
-4,4,TRUE,All requirements met.,2024-06-21
-5,5,TRUE,Verification completed.,2024-06-22

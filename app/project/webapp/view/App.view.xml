@@ -3,13 +3,6 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
     <App id="app">
-        <Page title="Welcome to Employee Onboarding Portal">
-            <HBox class="buttonContainer" alignItems="Center" justifyContent="SpaceAround">
-                <Button text="Employee Login" class="styledButton"/>
-                <Button text="HR Login" class="styledButton"/>
-                <Button text="Manager Login" class="styledButton"/>
-            </HBox>
-        </Page>
     </App>
 </mvc:View>
 

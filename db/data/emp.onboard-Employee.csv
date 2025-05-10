@@ -1,6 +1,0 @@
-ID,FullName,Email,PhoneNumber,CollegeName,Degree,Department,PassingYear,Percentage,DateOfJoining,Status,Document,SubmittedDate,Address
-1,John Doe,johndoe@example.com,9876543210,ABC University,B.Tech Computer Science,IT,2023,85,2024-07-01,Submitted,resume.pdf,2024-06-15.123 Business Ave,Mumbai,Maharashtra,India,400001
-2,Jane Smith,janesmith@example.com,8765432109,XYZ College,MBA Finance,Finance,2022,90,2024-07-15,Submitted,resume.pdf,2024-06-18,45 Lake Rd,Delhi,Delhi,India,110001
-3,Michael Brown,michaelb@example.com,7654321098,DEF Institute,B.Sc Data Science,Analytics,2021,88,2024-08-01,Submitted,resume.pdf,2024-06-20,789 Tech Park,Bangalore,Karnataka,India,560001
-4,Emily Johnson,emilyj@example.com,6543210987,GHI University,B.Com Marketing,Marketing,2023,80,2024-07-10,Submitted,resume.pdf,2024-06-17,55 Main St,Pune,Maharashtra,India,411001
-5,Chris Taylor,christ@example.com,5432109876,LMN College,B.Tech Mechanical,Engineering,2022,92,2024-07-20,Submitted,resume.pdf,2024-06-22,88 Industrial Ave,Chennai,Tamil Nadu,India,600001

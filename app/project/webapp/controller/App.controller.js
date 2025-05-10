@@ -1,11 +1,11 @@
 sap.ui.define([
   "sap/ui/core/mvc/Controller"
-], function(Controller) {
+], (BaseController) => {
   "use strict";
 
-  return Controller.extend("project.controller.Home", {
-      onEmployeeLogin: function() {
-          this.getOwnerComponent().getRouter().navTo("EmployeeLogin");
+  return BaseController.extend("project.controller.App", {
+      onInit(){
+
       }
   });
 });

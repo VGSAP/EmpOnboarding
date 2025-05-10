@@ -1,0 +1,45 @@
+<mvc:View controllerName="project.controller.home"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+        <Page class="background" showHeader="false">
+            <VBox alignItems="Center" class="Header">
+                <Title text="Welcome to Onboarding Portal" class="pagetitle"></Title>
+            </VBox>
+
+            <VBox class="loginContainer" alignItems="Center" justifyContent="Center">
+                <Label text="Email" />
+                <Input id="emailInput" type="Email" placeholder="Enter your email"/>
+                <Label text="Password" />
+                <Input id="passwordInput" type="Password" placeholder="Enter your password"/>
+                <Button text="Login" press="onLogin"/>
+                <Link text="Don't have an account? Register" press="onOpenRegisterDialog"/>
+            </VBox>
+
+            <Dialog id="registerDialog" title="Register">
+                <VBox class="registerContainer">
+                    <Label text="Full Name"/>
+                    <Input id="nameInput" placeholder="Enter your name"/>
+
+                    <Label text="Mobile Number"/>
+                    <Input id="mobilenumber" placeholder="Enter your mobile number"/>
+
+                    <Label text="Email"/>
+                    <Input id="regEmailInput" type="Email" placeholder="Enter your email"/>
+
+                    <Label text="Password"/>
+                    <Input id="regPasswordInput" type="Password" placeholder="Create a password"/>
+
+                    <Label text="Confirm Password"/>
+                    <Input id="confirmpass" type="Password" placeholder="Confirm password"/>
+
+                    <CheckBox id="terms" text="I agree to above Terms &amp; Coniditons"></CheckBox>
+                </VBox>
+                <beginButton>
+                    <Button text="Register" press="onRegister"/>
+                </beginButton>
+                <endButton>
+                    <Button text="Cancel" press="onCancelRegister"/>
+                </endButton>
+            </Dialog>
+        </Page>
+</mvc:View>

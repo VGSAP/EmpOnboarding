@@ -6,15 +6,25 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
-    "@sap/cds": "^8",
-    "express": "^4"
+    "@cap-js/hana": "^1.9.0",
+    "@sap/cds": "8.9.3",
+    "@sap/xssec": "^4.7.0",
+    "expess": "0.0.1-security"
   },
   "devDependencies": {
+    "@cap-js/cds-types": "^0.10.0",
     "@cap-js/sqlite": "^1",
-    "@cap-js/cds-types": "^0.10.0"
+    "@sap/cds-dk": "^8"
   },
   "scripts": {
-    "start": "cds-serve",
+    "start": "cds serve",
     "watch-project": "cds watch --open project/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "kind": "hana"
+      }
+    }
   }
 }

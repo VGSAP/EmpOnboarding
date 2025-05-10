@@ -1,0 +1,7 @@
+ID,NAME,EMAIL,PASSWORD,MOBILENUMBER,ROLE
+101,Tejasri,tejasri@example.com,Pass@123,9876543210,Admin
+102,Rohan,rohan@example.com,Secure#45,8765432109,Manager
+103,Priya,priya@example.com,Strong!78,7654321098,HR
+104,Arjun,arjun@example.com,WorkFlow!99,6543210987,Developer
+105,Sneha,sneha@example.com,Smart@56,5432109876,Analyst
+106,Varun,varun@example.com,Cloud$88,4321098765,Designer
