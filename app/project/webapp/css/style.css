@@ -1,22 +1,82 @@
-.Header {
-    background-color: whitesmoke;
-    height: 50px;
-}
-.pagetitle{
-    font-size: larger;
-    padding-top: 15px;
-    color: black;
-}
-
-.buttonContainer {
-    background-color: white;
-}
-
-.styledButton {
-    border-radius: 8px; /* Rounded corners */
-    padding: 10px 20px; /* Button size */
-    font-size: 20px;
-    font-weight: bold;
-    border: none;
-    transition: background-color 0.3s ease;
-}
+    .Header {
+        background-color: whitesmoke;
+        height: 50px;
+    }
+    .pagetitle {
+        font-size: larger;
+        padding-top: 15px;
+        color: black;
+    }
+    .loginContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .buttonContainer {
+        background-color: white;
+    }
+    .styledButton {
+        border-radius: 8px; /* Rounded corners */
+        padding: 10px 20px; /* Button size */
+        font-size: 20px;
+        font-weight: bold;
+        border: none;
+        transition: background-color 0.3s ease;
+    }
+    .pageContainer {
+        display: flex;
+        height: 100vh;
+    }
+    .imageContainer, .loginSection {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .imageContainer {
+        background-color: #f0f0f0; /* Optional: Add a background color */
+    }
+    .loginSection {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .loginContainer {
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        align-items: flex-start; /* Align items to the start (left) */
+    }
+    .loginContainer > * {
+        margin-bottom: 10px; /* Add some spacing between elements */
+    }
+    .logo {
+        margin-bottom: 20px; /* Add some space below the logo */
+    }
+    .requiredLabel::after {
+        content: " *";
+        color: red;
+        font-weight: bold;
+    }
+    .requiredLabel {
+        font-weight: bold;
+    }
+    .fullWidth {
+        width: 100%;
+    }
+    .centeredButton {
+        align-self: center;
+        margin-top: 10px;
+    }
