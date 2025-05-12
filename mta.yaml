@@ -25,7 +25,6 @@ modules:
           srv-url: ${default-url}
     requires:
       - name: Hana-db
-      - name: EmployeeOnboarding-auth
 
   - name: Hana-db-deployer
     type: hdb

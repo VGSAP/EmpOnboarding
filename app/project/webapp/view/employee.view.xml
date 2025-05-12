@@ -1,9 +1,50 @@
 <mvc:View controllerName="project.controller.employee"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
-    xmlns:layout="sap.ui.layout">
-    <Page id="page" title="Welcome">
+    xmlns:unified="sap.ui.unified">
+    <Page title="Employee Onboarding">
+        <content>
+            <VBox>
+                <!-- Personal Details Section -->
+                <Title text="Personal Details"/>
+                <Label text="Name"/>
+                <Input id="name" placeholder="Enter full name"/>
+                
+                <Label text="Date of Birth"/>
+                <DatePicker id="dobPicker"/>
+                
+                <Label text="Email"/>
+                <Input id="email" type="Email" placeholder="Enter email address"/>
+                
+                <Label text="Phone"/>
+                <Input id="phoneInput" type="Tel" placeholder="Enter phone number"/>
+                
+                <!-- Education Details Section -->
+                <Title text="Education Details"/>
+                <Label text="Highest Qualification"/>
+                
+                
+                <Label text="Branch"/>
+                <Input id="branchInput" placeholder="Enter branch/major"/>
+                
+                <Label text="CGPA/Percentile"/>
+                <Input id="cgpaInput" placeholder="Enter CGPA or percentile"/>
+                
+                <!-- Attachment for Onboarding -->
+                <Title text="Documents Upload"/>
+                <Label text="Upload Resume/Certificates"/>
+                <HBox>
+                    <unified:FileUploader id="fileUploader" 
+                                          multiple="true" 
+                                          uploadUrl="your/upload/url"
+                                          fileType="pdf,docx"
+                                          placeholder="Select file to upload"/>
+                </HBox>
+                
+                <!-- Submit Button -->
+                <Button text="Submit" press="onSubmit"/>
+            </VBox>
+        </content>
     </Page>
 
- 
 </mvc:View>
