@@ -4,7 +4,8 @@
     }
     .pagetitle {
         font-size: larger;
-        padding-top: 15px;
+        padding-top: 5px;
+        padding-bottom: 10px;
         color: black;
     }
     .loginContainer {
@@ -51,7 +52,7 @@
         align-items: center;
         justify-content: center;
     }
-    .loginContainer {
+    .loginContainer, .registerContainer {
         border: 1px solid #ccc;
         padding: 20px;
         border-radius: 10px;
@@ -59,8 +60,8 @@
         flex-direction: column;
         align-items: flex-start; /* Align items to the start (left) */
     }
-    .loginContainer > * {
-        margin-bottom: 10px; /* Add some spacing between elements */
+    .loginContainer > *, .registerContainer > * {
+        margin-bottom: 5px; /* Add some spacing between elements */
     }
     .logo {
         margin-bottom: 20px; /* Add some space below the logo */
@@ -72,11 +73,30 @@
     }
     .requiredLabel {
         font-weight: bold;
+        padding-top: 5px;
+        padding-bottom: 0px;
     }
+    
+    .registerContainer .sapMLabel, .registerContainer .sapMInput {
+        margin-bottom: 1px; /* Reduce spacing between labels and input fields */
+    }
+    
     .fullWidth {
         width: 100%;
+        padding-top: 0px;
+        padding-bottom: 5px;
+    }
+    .rememberForgotContainer {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .forgotPasswordLink {
+        color: blue;
+        cursor: pointer;
     }
     .centeredButton {
         align-self: center;
         margin-top: 10px;
     }
+
