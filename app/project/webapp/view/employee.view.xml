@@ -1,50 +1,69 @@
-<mvc:View controllerName="project.controller.employee"
+<mvc:View
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
-    xmlns:unified="sap.ui.unified">
+    xmlns:core="sap.ui.core"
+    xmlns:unified="sap.ui.unified"
+    controllerName="project.controller.employee">
     <Page title="Employee Onboarding">
         <content>
             <VBox>
                 <!-- Personal Details Section -->
                 <Title text="Personal Details"/>
-                <Label text="Name"/>
-                <Input id="name" placeholder="Enter full name"/>
+
+                <Label text="First Name"/>
+                <Input id="firstname" placeholder="Enter full name" liveChange="onValidate"/>
+
+                <Label text="Last Name"/>
+                <Input id="lastname" placeholder="Enter full name" liveChange="onValidate"/>
                 
-                <Label text="Date of Birth"/>
-                <DatePicker id="dobPicker"/>
+                <Label text="Date of Birth" />
+                <DatePicker id="dobPicker" liveChange="onValidateDOB"/>
                 
                 <Label text="Email"/>
-                <Input id="email" type="Email" placeholder="Enter email address"/>
+                <Input id="email" type="Email" placeholder="Enter email address" liveChange="onValidateEmail"/>
                 
                 <Label text="Phone"/>
-                <Input id="phoneInput" type="Tel" placeholder="Enter phone number"/>
+                <Input id="phoneInput" type="Tel" placeholder="Enter phone number" liveChange="onValidatePhone"/>
+
+                <Label text="Select Gender"/>
+                <ComboBox id="GenderComboBox" change="onValidate">
+                    <items>
+                        <core:ListItem key="Female" text="Female"/>
+                        <core:ListItem key="Male" text="Male"/>
+                        <core:ListItem key="Other" text="Other"/>
+                    </items>
+                </ComboBox>
+
+                <Label text="Select Nationality"/>
+                <ComboBox id="nationalityComboBox" change="onValidate">
+                    <items>
+                        <core:ListItem key="Indian" text="Indian"/>
+                        <core:ListItem key="American" text="American"/>
+                        <core:ListItem key="British" text="British"/>
+                        <core:ListItem key="Canadian" text="Canadian"/>
+                        <core:ListItem key="Australian" text="Australian"/>
+                    </items>
+                </ComboBox>
+            
+             
+
+                <Label text="Address"/>
+                <Input id="Houseno" liveChange="onValidate"/>
+                <Label text="House No" />
+                <Input id="Street" liveChange="onValidate"/>
+                <Label text="Street"/>
+                <Input id="City" liveChange="onValidate"/>
+                <Label text="City"/>
+                <Input id="State" liveChange="onValidate"/>
+                <Label text="State"/>
+                <Input id="Country" liveChange="onValidate"/>
+                <Label text="Country"/>
+                <Input id="ZipCode" liveChange="onValidateZip"/>
+                <Label text="Zip Code"/>    
+                          
                 
-                <!-- Education Details Section -->
-                <Title text="Education Details"/>
-                <Label text="Highest Qualification"/>
-                
-                
-                <Label text="Branch"/>
-                <Input id="branchInput" placeholder="Enter branch/major"/>
-                
-                <Label text="CGPA/Percentile"/>
-                <Input id="cgpaInput" placeholder="Enter CGPA or percentile"/>
-                
-                <!-- Attachment for Onboarding -->
-                <Title text="Documents Upload"/>
-                <Label text="Upload Resume/Certificates"/>
-                <HBox>
-                    <unified:FileUploader id="fileUploader" 
-                                          multiple="true" 
-                                          uploadUrl="your/upload/url"
-                                          fileType="pdf,docx"
-                                          placeholder="Select file to upload"/>
-                </HBox>
-                
-                <!-- Submit Button -->
-                <Button text="Submit" press="onSubmit"/>
+                <Button text="Next" press="onNext"/>
             </VBox>
         </content>
     </Page>
-
 </mvc:View>

@@ -115,6 +115,16 @@
           "name": "employee",
           "pattern": "employee",
           "target": "employee"
+        },
+        {
+          "name": "education",
+          "pattern": "education",
+          "target" : "education"
+        },
+        {
+          "name": "document",
+          "pattern": "document",
+          "target" : "document"
         }
       ],
       "targets": {
@@ -125,6 +135,16 @@
         "employee": {
           "id": "employee",
           "name": "employee"
+        },
+        "education" : {
+          "id": "education",
+          "name": "education"
+
+        },
+        "document" : {
+          "id": "document",
+          "name": "document"
+
         }
       }
     },

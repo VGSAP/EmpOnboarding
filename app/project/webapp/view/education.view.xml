@@ -1,0 +1,68 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:unified="sap.ui.unified"
+    controllerName="project.controller.education">
+    
+    <Title text="Education Details"/>
+
+    <VBox>
+        <!-- Highest Qualification -->
+        <Label text="Highest Qualification"/>
+        <ComboBox id="highestQualification">
+            <items>
+                <core:Item key="Bachelor" text="Bachelor's Degree"/>
+                <core:Item key="Master" text="Master's Degree"/>
+                <core:Item key="PhD" text="PhD"/>
+                <core:Item key="Diploma" text="Diploma"/>
+            </items>
+        </ComboBox>
+
+        <Label text="Branch"/>
+        <ComboBox id="Branch">
+            <items>
+                <core:Item key="Computer Science" text="Computer Science"/>
+                <core:Item key="Civil" text="Civil"/>
+                <core:Item key="Mechanical" text="Mechanical"/>
+                <core:Item key="Electrical" text="Electrical"/>
+            </items>
+        </ComboBox>
+
+        <Label text="College/University"/>
+        <Input id="collegeName" placeholder="Enter college/university name"/>
+
+        <Label text="Percentage"/>
+        <Input id="percentage" placeholder="Enter percentage" type="Number" liveChange="onPercentageChange"/>
+
+        
+
+        <!-- High School Details -->
+        <Label text="High School Stream"/>
+        <ComboBox id="highSchoolStream">
+            <items>
+                <core:Item key="MPC" text="MPC"/>
+                <core:Item key="BPC" text="BPC"/>
+            </items>
+        </ComboBox>
+
+        <Label text="High School"/>
+        <Input id="highSchool" placeholder="Enter high school name"/>
+
+        <Label text="Percentage"/>
+        <Input id="highSchoolPercentage" placeholder="Enter percentage" type="Number" liveChange="onPercentageChange"/>
+
+        
+
+        <!-- School Details -->
+        <Label text="School"/>
+        <Input id="school" placeholder="Enter school name"/>
+
+        <Label text="Percentage"/>
+        <Input id="schoolPercentage" placeholder="Enter percentage" type="Number" liveChange="onPercentageChange"/>
+
+        
+    </VBox>
+
+    <Button text="Next" press="onNext"/>
+</mvc:View>

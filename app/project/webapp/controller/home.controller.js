@@ -1,6 +1,7 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
-], function(Controller){
+    "sap/ui/core/mvc/Controller",
+    "sap/m/MessageBox"
+], function(Controller, MessageBox) {
     "use strict";
 
     return Controller.extend("project.controller.home", {
@@ -18,52 +19,67 @@ sap.ui.define([
         },
 
         onOpenRegisterDialog: function () {
+
             var oView = this.getView();
+            
             if (!this.oRegisterDialog) {
                 this.oRegisterDialog = oView.byId("registerDialog");
             }
             this.oRegisterDialog.open();
         },
+
         onRegister: function () {
-            // Retrieve UI5 Model
-            var oModel = this.getOwnerComponent().getModel("ODataModel");
+            var oView = this.getView();
+
+            var name = this.byId("nameInput").getValue();
+            var mobile = this.byId("mobilenumber").getValue();
+            var email = this.byId("regEmailInput").getValue();
+            var password = this.byId("regPasswordInput").getValue();
+            var confirmPassword = this.byId("confirmpass").getValue();
+            var termsChecked = this.byId("terms").getSelected();
+
+            var errorMessage = "";
+
+            var mobileRegex = /^[0-9]{10}$/; 
+            var emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/; 
+            var passwordRegex = /^.{8,}$/; 
         
-            // Get Input Values
-            var name = this.getView().byId("nameInput").getValue();
-            var email = this.getView().byId("regEmailInput").getValue();
-            var password = this.getView().byId("regPasswordInput").getValue();
-            var mobile = this.getView().byId("mobilenumber").getValue();
-            var confirmPassword = this.getView().byId("confirmpass").getValue();
-            var termsAccepted = this.getView().byId("terms").getSelected(); // Checkbox validation
+            
         
-            // Client-Side Validation
-            if (!name || !email || !password || !mobile || !confirmPassword || !termsAccepted) {
-                sap.m.MessageToast.show("All fields are required!");
-                return;
+            if (!mobileRegex.test(mobile)) {
+                errorMessage += "Mobile number must be 10 digits.\n";
+            }
+            
+            if (!emailRegex.test(email)) {
+                errorMessage += "Email must be in the format 'abc@gmail.com'.\n";
+            }
+        
+            if (!passwordRegex.test(password)) {
+                errorMessage += "Password must be at least 8 characters.\n";
             }
         
             if (password !== confirmPassword) {
-                sap.m.MessageToast.show("Passwords do not match!");
-                return;
+                errorMessage += "Passwords do not match.\n";
             }
         
-            if (!email.match(/^\S+@\S+\.\S+$/)) {
-                sap.m.MessageToast.show("Invalid email format!");
-                return;
+            if (!termsChecked) {
+                errorMessage += "You must agree to the Terms & Conditions.\n";
+            }
+
+            if(!name || !mobile || !email || !password || !confirmPassword || !termsChecked ){
+                errorMessage += "All fields are required.\n";
             }
         
-            if (!mobile.match(/^[0-9]{10}$/)) {
-                sap.m.MessageToast.show("Invalid mobile number!");
-                return;
+            if (errorMessage) {
+                sap.m.MessageBox.error(errorMessage);
+            } else {
+                sap.m.MessageToast.show("Registration successful! Now Login");
+                this.getView().byId("registerDialog").close();
             }
-        
-    
-        
-            // Close the Registration Dialog (if applicable)
+        },
+
+        onCancelRegister: function() {
             this.getView().byId("registerDialog").close();
         }
-        
-    })
-
-        
+    });
 });

@@ -1,0 +1,21 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:unified="sap.ui.unified"
+    controllerName="project.controller.document">
+    <Title text="Documents Upload"/>
+    <VBox>
+        <Label text="Upload Degree Certificate"/>
+        <unified:FileUploader id="degreeDocument" buttonText="Upload Document" uploadUrl="/upload" change="onFileUpload"/>
+        <Label text="Upload High School Certificate"/>
+        <unified:FileUploader id="highSchoolDocument" buttonText="Upload Document" uploadUrl="/upload" change="onFileUpload"/>
+        <Label text="Upload School Certificate"/>
+        <unified:FileUploader id="schoolDocument" buttonText="Upload Document" uploadUrl="/upload" change="onFileUpload"/>
+        <Label text="Aadhar Card"/>
+        <unified:FileUploader id="AadharDocument" buttonText="Upload Document" uploadUrl="/upload" change="onFileUpload"/>
+        <Label text="Upload Resume"/>
+        <unified:FileUploader id="Resume" buttonText="Upload Document" uploadUrl="/upload" change="onFileUpload"/>
+    </VBox>
+    <Button text="Submit" press="onsubmit"></Button>
+
+</mvc:View>

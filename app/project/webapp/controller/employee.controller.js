@@ -1,57 +1,62 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/m/MessageToast",
-    "sap/ui/model/json/JSONModel"
-], function (Controller, MessageToast, JSONModel) {
+    "sap/ui/model/json/JSONModel",
+    "sap/ui/core/ValueState"
+], function (Controller, MessageToast, JSONModel, ValueState) {
     "use strict";
 
-    return Controller.extend("your.namespace.controller.employee", {
-        onInit: function () {
-            // Initialize a JSON model to store form data
-            var oData = {
-                name: "",
-                dob: "",
-                email: "",
-                phone: "",
-                qualification: "",
-                branch: "",
-                cgpa: "",
-                files: []
-            };
-            var oModel = new JSONModel(oData);
-            this.getView().setModel(oModel, "employee");
-        },
-
-        onSubmit: function () {
-            var oView = this.getView();
-            var oModel = oView.getModel("employee");
-            var oData = oModel.getData();
-
-            // Simple validation
-            if (!oData.name || !oData.email || !oData.phone || !oData.qualification) {
-                MessageToast.show("Please fill in all required fields!");
-                return;
+    return Controller.extend("project.controller.employee", {
+        onNext: function () {
+            var firstName = this.byId("firstname").getValue();
+            var lastName = this.byId("lastname").getValue();
+            var dob = this.byId("dobPicker").getDateValue();
+            var email = this.byId("email").getValue();
+            var phone = this.byId("phoneInput").getValue();
+            var gender = this.byId("GenderComboBox").getSelectedKey();
+            var nationality = this.byId("nationalityComboBox").getSelectedKey();
+            var houseNo = this.byId("Houseno").getValue();
+            var street = this.byId("Street").getValue();
+            var city = this.byId("City").getValue();
+            var state = this.byId("State").getValue();
+            var country = this.byId("Country").getValue();
+            var zipCode = this.byId("ZipCode").getValue();
+        
+            var emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/; // Ensure email is Gmail format
+            var phoneRegex = /^[0-9]{10}$/; // Ensure phone number is exactly 10 digits
+            var today = new Date();
+        
+            var errorMessage = "";
+        
+            // Check mandatory fields
+            if (!firstName || !lastName || !dob || !email || !phone || !gender || !nationality || !houseNo || !street || !city || !state || !country || !zipCode) {
+                errorMessage += "All fields marked with * must be filled.\n";
             }
-
-            // Log data for debugging
-            console.log("Employee Data Submitted:", oData);
-
-            // Simulating a backend call
-            MessageToast.show("Form submitted successfully!");
-        },
-
-        onFileUpload: function (oEvent) {
-            var oUploader = oEvent.getSource();
-            var aFiles = oUploader.getSelectedFiles();
-
-            if (aFiles.length === 0) {
-                MessageToast.show("Please select a file to upload.");
-                return;
+        
+            // Date of birth validation (must be before today)
+            if (dob >= today) {
+                errorMessage += "Date of Birth must be before today.\n";
             }
-
-            var oModel = this.getView().getModel("employee");
-            oModel.setProperty("/files", aFiles);
-            MessageToast.show("Files uploaded successfully!");
+        
+            // Email validation
+            if (!emailRegex.test(email)) {
+                errorMessage += "Email must be in the format 'abc@gmail.com'.\n";
+            }
+        
+            // Phone validation
+            if (!phoneRegex.test(phone)) {
+                errorMessage += "Phone number must be exactly 10 digits.\n";
+            }
+        
+            if (errorMessage) {
+                sap.m.MessageBox.error(errorMessage); // Display validation errors
+            } else {
+                sap.m.MessageToast.show("Validation successful!");
+                // Proceed to next step or submit form
+                var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+                oRouter.navTo("education");
+            }
         }
+        
     });
 });
