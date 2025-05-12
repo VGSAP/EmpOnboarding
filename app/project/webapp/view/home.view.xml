@@ -22,29 +22,29 @@
         </HBox>
 
         <Dialog id="registerDialog" title="Register">
-            <VBox class="registerContainer">
-                <Label text="Full Name"/>
-                <Input id="nameInput" placeholder="Enter your name"/>
+            <VBox class="registerContainer" alignItems="Start" justifyContent="Center">
+                <Label text="Full Name" class="requiredLabel"/>
+                <Input id="nameInput" class="fullWidth"/>
 
-                <Label text="Mobile Number"/>
-                <Input id="mobilenumber" placeholder="Enter your mobile number"/>
+                <Label text="Mobile Number" class="requiredLabel"/>
+                <Input id="mobilenumber"  class="fullWidth"/>
 
-                <Label text="Email"/>
-                <Input id="regEmailInput" type="Email" placeholder="Enter your email"/>
+                <Label text="Email" class="requiredLabel"/>
+                <Input id="regEmailInput" type="Email"  class="fullWidth"/>
 
-                <Label text="Password"/>
-                <Input id="regPasswordInput" type="Password" placeholder="Create a password"/>
+                <Label text="Password" class="requiredLabel"/>
+                <Input id="regPasswordInput" type="Password"  class="fullWidth"/>
 
-                <Label text="Confirm Password"/>
-                <Input id="confirmpass" type="Password" placeholder="Confirm password"/>
+                <Label text="Confirm Password" class="requiredLabel"/>
+                <Input id="confirmpass" type="Password"  class="fullWidth"/>
 
-                <CheckBox id="terms" text="I agree to above Terms &amp; Conditions"></CheckBox>
+                <CheckBox id="terms" text="I agree to above Terms &amp; Conditions"/>
             </VBox>
             <beginButton>
-                <Button text="Register" press="onRegister"/>
+                <Button text="Register" press="onRegister" class="centeredButton"/>
             </beginButton>
             <endButton>
-                <Button text="Cancel" press="onCancelRegister"/>
+                <Button text="Cancel" press="onCancelRegister" class="centeredButton"/>
             </endButton>
         </Dialog>
     </Page>

@@ -61,9 +61,10 @@ sap.ui.define([
         
             // Close the Registration Dialog (if applicable)
             this.getView().byId("registerDialog").close();
-        }
-        
+        },
+        onCancelRegister: function () {
+            // Close the Registration Dialog
+            this.getView().byId("registerDialog").close();
+        }  
     })
-
-        
 });
