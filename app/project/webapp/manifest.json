@@ -125,6 +125,11 @@
           "name": "document",
           "pattern": "document",
           "target" : "document"
+        },
+        {
+          "name": "hr",
+          "pattern": "hr",
+          "target" : "hr"
         }
       ],
       "targets": {
@@ -145,6 +150,10 @@
           "id": "document",
           "name": "document"
 
+        },
+        "hr" : {
+          "id": "hr",
+          "name": "hr"
         }
       }
     },
