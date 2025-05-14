@@ -1,9 +1,8 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/m/MessageToast",
-    "sap/ui/model/json/JSONModel",
-    "sap/ui/core/ValueState"
-], function (Controller, MessageToast, JSONModel, ValueState) {
+    "sap/m/MessageBox"
+], function (Controller, MessageToast, MessageBox) {
     "use strict";
 
     return Controller.extend("project.controller.employee", {
@@ -48,9 +47,9 @@ sap.ui.define([
             }
         
             if (errorMessage) {
-                sap.m.MessageBox.error(errorMessage); // Display validation errors
+                MessageBox.error(errorMessage); // Display validation errors
             } else {
-                sap.m.MessageToast.show("Validation successful!");
+                MessageToast.show("Validation successful!");
                 // Proceed to next step or submit form
                 var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
                 oRouter.navTo("education");

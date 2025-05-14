@@ -1,12 +1,12 @@
 namespace emp.onboard;
 
 entity User {
-    key ID: Integer;
-    NAME: String;
-    EMAIL: String;
-    PASSWORD: String;
-    MOBILENUMBER : String;
-    ROLE : String default 'User';
+    key id: String;
+    name: String;
+    email: String;
+    password: String;
+    mobilenumber : String;
+    role : String;
     
 }
 
