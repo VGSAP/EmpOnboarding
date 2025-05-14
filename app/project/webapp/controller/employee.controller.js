@@ -1,9 +1,8 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/m/MessageToast",
-    "sap/ui/model/json/JSONModel",
-    "sap/ui/core/ValueState"
-], function (Controller, MessageToast, JSONModel, ValueState) {
+    "sap/m/MessageBox"
+], function (Controller, MessageToast, MessageBox) {
     "use strict";
 
     return Controller.extend("project.controller.employee", {
@@ -15,8 +14,7 @@ sap.ui.define([
             var phone = this.byId("phoneInput").getValue();
             var gender = this.byId("GenderComboBox").getSelectedKey();
             var nationality = this.byId("nationalityComboBox").getSelectedKey();
-            var houseNo = this.byId("Houseno").getValue();
-            var street = this.byId("Street").getValue();
+            var address = this.byId("Address").getValue();
             var city = this.byId("City").getValue();
             var state = this.byId("State").getValue();
             var country = this.byId("Country").getValue();
@@ -29,7 +27,7 @@ sap.ui.define([
             var errorMessage = "";
         
             // Check mandatory fields
-            if (!firstName || !lastName || !dob || !email || !phone || !gender || !nationality || !houseNo || !street || !city || !state || !country || !zipCode) {
+            if (!firstName || !lastName || !dob || !email || !phone || !gender || !nationality || !address || !city || !state || !country || !zipCode) {
                 errorMessage += "All fields marked with * must be filled.\n";
             }
         
@@ -49,9 +47,9 @@ sap.ui.define([
             }
         
             if (errorMessage) {
-                sap.m.MessageBox.error(errorMessage); // Display validation errors
+                MessageBox.error(errorMessage); // Display validation errors
             } else {
-                sap.m.MessageToast.show("Validation successful!");
+                MessageToast.show("Validation successful!");
                 // Proceed to next step or submit form
                 var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
                 oRouter.navTo("education");

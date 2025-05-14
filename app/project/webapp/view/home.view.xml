@@ -1,6 +1,7 @@
 <mvc:View controllerName="project.controller.home"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
     <Page class="background" showHeader="false">
         <HBox class="pageContainer">
             <VBox class="imageContainer">

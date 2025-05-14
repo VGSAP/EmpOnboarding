@@ -1,22 +1,52 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "sap/m/MessageBox"
-], function(Controller, MessageBox) {
+    "sap/m/MessageToast"
+], function(Controller, MessageToast) {
     "use strict";
 
     return Controller.extend("project.controller.home", {
         onLogin: function () {
             var email = this.getView().byId("emailInput").getValue();
             var password = this.getView().byId("passwordInput").getValue();
-
+        
+            // Validation checks
             if (!email || !password) {
                 sap.m.MessageToast.show("Please enter valid credentials!");
                 return;
             }
-
-            var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-            oRouter.navTo("employee");
+        
+            $.ajax({
+                url: window.location.origin + "/odata/v4/onboarding/Users?$filter=email eq '" + email + "'",
+                type: "GET",
+                contentType: "application/json",
+                success: function (data) {
+                    if (data.value && data.value.length > 0) {
+                        var storedPassword = data.value[0].password;
+        
+                        // Validate password (consider hashing instead of plain comparison)
+                        if (storedPassword === password) {
+                            sap.m.MessageToast.show("Login successful!");
+                            sap.ui.core.UIComponent.getRouterFor(this).navTo("employee");
+                        } else {
+                            sap.m.MessageBox.error("Incorrect password. Please try again.");
+                        }
+                    } else {
+                        sap.m.MessageBox.error("User not found. Please check your email.");
+                    }
+                }.bind(this),
+                error: function (xhr) {
+                    var errorMessage = "Unexpected error occurred.";
+                    try {
+                        var responseJSON = JSON.parse(xhr.responseText);
+                        errorMessage = responseJSON.error?.message || errorMessage;
+                    } catch (err) {
+                        console.error("Error parsing JSON response:", err);
+                    }
+                    sap.m.MessageBox.error(errorMessage);
+                }
+            });
         },
+        
 
         onOpenRegisterDialog: function () {
 
@@ -32,13 +62,11 @@ sap.ui.define([
             var oView = this.getView();
 
             var name = this.byId("nameInput").getValue();
-            var mobile = this.byId("mobilenumber").getValue();
+            var mobilenumber = this.byId("mobilenumber").getValue();
             var email = this.byId("regEmailInput").getValue();
             var password = this.byId("regPasswordInput").getValue();
             var confirmPassword = this.byId("confirmpass").getValue();
             var termsChecked = this.byId("terms").getSelected();
-
-            var errorMessage = "";
 
             var mobileRegex = /^[0-9]{10}$/; 
             var emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/; 
@@ -46,36 +74,53 @@ sap.ui.define([
         
             
         
-            if (!mobileRegex.test(mobile)) {
-                errorMessage += "Mobile number must be 10 digits.\n";
+            if (!mobileRegex.test(mobilenumber)) {
+                MessageToast.show("Mobile number must be 10 digits.\n");
             }
             
             if (!emailRegex.test(email)) {
-                errorMessage += "Email must be in the format 'abc@gmail.com'.\n";
+                MessageToast.show("Email must be in the format 'abc@gmail.com'.\n");
             }
         
             if (!passwordRegex.test(password)) {
-                errorMessage += "Password must be at least 8 characters.\n";
+                MessageToast.show("Password must be at least 8 characters.\n");
             }
         
             if (password !== confirmPassword) {
-                errorMessage += "Passwords do not match.\n";
+                MessageToast.show("Passwords do not match.\n");
             }
         
             if (!termsChecked) {
-                errorMessage += "You must agree to the Terms & Conditions.\n";
+                MessageToast.show("You must agree to the Terms & Conditions.\n");
             }
 
-            if(!name || !mobile || !email || !password || !confirmPassword || !termsChecked ){
-                errorMessage += "All fields are required.\n";
+            if(!name || !mobilenumber || !email || !password || !confirmPassword || !termsChecked ){
+                MessageToast.show("All fields are required.\n");
             }
         
-            if (errorMessage) {
-                sap.m.MessageBox.error(errorMessage);
-            } else {
-                sap.m.MessageToast.show("Registration successful! Now Login");
-                this.getView().byId("registerDialog").close();
-            }
+            var oData = {
+                id: new Date().getTime().toString(),
+                name : name,
+                email: email,
+                mobilenumber: mobilenumber,
+                password: password,
+                role: "User"
+            };
+            console.log(oData);
+            $.ajax({
+                url: window.location.origin + "/odata/v4/onboarding/Users",
+                type: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(oData),
+                success: function () {
+                    MessageToast.show("Registration successful!");
+                    this.getView().byId("registerDialog").close();
+                    
+                }.bind(this),
+                error: function (xhr) {
+                    console.log("Raw error response:", xhr.responseText);
+                }
+            });
         },
 
         onCancelRegister: function() {

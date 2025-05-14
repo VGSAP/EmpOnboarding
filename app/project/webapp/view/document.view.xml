@@ -1,21 +1,45 @@
 <mvc:View
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
+    xmlns:core="sap.ui.core"
     xmlns:unified="sap.ui.unified"
     controllerName="project.controller.document">
-    <Title text="Documents Upload"/>
-    <VBox>
-        <Label text="Upload Degree Certificate"/>
-        <unified:FileUploader id="degreeDocument" buttonText="Upload Document" uploadUrl="/upload" change="onFileUpload"/>
-        <Label text="Upload High School Certificate"/>
-        <unified:FileUploader id="highSchoolDocument" buttonText="Upload Document" uploadUrl="/upload" change="onFileUpload"/>
-        <Label text="Upload School Certificate"/>
-        <unified:FileUploader id="schoolDocument" buttonText="Upload Document" uploadUrl="/upload" change="onFileUpload"/>
-        <Label text="Aadhar Card"/>
-        <unified:FileUploader id="AadharDocument" buttonText="Upload Document" uploadUrl="/upload" change="onFileUpload"/>
-        <Label text="Upload Resume"/>
-        <unified:FileUploader id="Resume" buttonText="Upload Document" uploadUrl="/upload" change="onFileUpload"/>
-    </VBox>
-    <Button text="Submit" press="onsubmit"></Button>
 
+    <Page title="Documents Upload">
+        <content>
+            <VBox alignItems="Center" justifyContent="Center" class="sapUiSmallMargin">
+                <Title text="Upload Documents" class="sapUiSmallMarginBottom"/>
+
+                <HBox class="formRow">
+                    <Label text="Upload Degree Certificate *" class="formLabel"/>
+                    <unified:FileUploader id="degreeDocument" buttonText="Upload Document" uploadUrl="/upload" change="onFileUpload" class="formInput"/>
+                </HBox>
+
+                <HBox class="formRow">
+                    <Label text="Upload High School Certificate *" class="formLabel"/>
+                    <unified:FileUploader id="highSchoolDocument" buttonText="Upload Document" uploadUrl="/upload" change="onFileUpload" class="formInput"/>
+                </HBox>
+
+                <HBox class="formRow">
+                    <Label text="Upload School Certificate *" class="formLabel"/>
+                    <unified:FileUploader id="schoolDocument" buttonText="Upload Document" uploadUrl="/upload" change="onFileUpload" class="formInput"/>
+                </HBox>
+
+                <HBox class="formRow">
+                    <Label text="Aadhar Card *" class="formLabel"/>
+                    <unified:FileUploader id="AadharDocument" buttonText="Upload Document" uploadUrl="/upload" change="onFileUpload" class="formInput"/>
+                </HBox>
+
+                <HBox class="formRow">
+                    <Label text="Upload Resume *" class="formLabel"/>
+                    <unified:FileUploader id="Resume" buttonText="Upload Document" uploadUrl="/upload" change="onFileUpload" class="formInput"/>
+                </HBox>
+
+                <HBox class="formRow">
+                    <Button text="Previous" press="onPrevious" class="sapUiSmallMarginTop sapUiSmallMarginEnd" width="120px"/>
+                    <Button text="Submit" press="onsubmit" class="sapUiSmallMarginTop" width="120px"/>
+                </HBox>
+            </VBox>
+        </content>
+    </Page>
 </mvc:View>

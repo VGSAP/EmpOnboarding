@@ -28,6 +28,10 @@ sap.ui.define([
                 MessageToast.show("Registered successfully!");
                 // Proceed to next step
             }
-        }
+        },
+        onPrevious: function () {
+            var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+            oRouter.navTo("education");
+        }        
     });
 });
