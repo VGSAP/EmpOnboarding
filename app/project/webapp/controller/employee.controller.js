@@ -15,8 +15,7 @@ sap.ui.define([
             var phone = this.byId("phoneInput").getValue();
             var gender = this.byId("GenderComboBox").getSelectedKey();
             var nationality = this.byId("nationalityComboBox").getSelectedKey();
-            var houseNo = this.byId("Houseno").getValue();
-            var street = this.byId("Street").getValue();
+            var address = this.byId("Address").getValue();
             var city = this.byId("City").getValue();
             var state = this.byId("State").getValue();
             var country = this.byId("Country").getValue();
@@ -29,7 +28,7 @@ sap.ui.define([
             var errorMessage = "";
         
             // Check mandatory fields
-            if (!firstName || !lastName || !dob || !email || !phone || !gender || !nationality || !houseNo || !street || !city || !state || !country || !zipCode) {
+            if (!firstName || !lastName || !dob || !email || !phone || !gender || !nationality || !address || !city || !state || !country || !zipCode) {
                 errorMessage += "All fields marked with * must be filled.\n";
             }
         

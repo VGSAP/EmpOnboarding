@@ -2,67 +2,88 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:core="sap.ui.core"
-    xmlns:unified="sap.ui.unified"
     controllerName="project.controller.employee">
     <Page title="Employee Onboarding">
         <content>
-            <VBox>
-                <!-- Personal Details Section -->
-                <Title text="Personal Details"/>
+            <VBox alignItems="Center" justifyContent="Center" class="sapUiSmallMargin">
+                <Title text="Personal Details" class="sapUiSmallMarginBottom"/>
 
-                <Label text="First Name"/>
-                <Input id="firstname" placeholder="Enter full name" liveChange="onValidate"/>
+                <!-- Each HBox contains one label and one input field -->
+                <HBox class="formRow">
+                    <Label text="First Name" class="formLabel"/>
+                    <Input id="firstname" liveChange="onValidate" class="formInput"/>
+                </HBox>
 
-                <Label text="Last Name"/>
-                <Input id="lastname" placeholder="Enter full name" liveChange="onValidate"/>
-                
-                <Label text="Date of Birth" />
-                <DatePicker id="dobPicker" liveChange="onValidateDOB"/>
-                
-                <Label text="Email"/>
-                <Input id="email" type="Email" placeholder="Enter email address" liveChange="onValidateEmail"/>
-                
-                <Label text="Phone"/>
-                <Input id="phoneInput" type="Tel" placeholder="Enter phone number" liveChange="onValidatePhone"/>
+                <HBox class="formRow">
+                    <Label text="Last Name" class="formLabel"/>
+                    <Input id="lastname" liveChange="onValidate" class="formInput"/>
+                </HBox>
 
-                <Label text="Select Gender"/>
-                <ComboBox id="GenderComboBox" change="onValidate">
-                    <items>
-                        <core:ListItem key="Female" text="Female"/>
-                        <core:ListItem key="Male" text="Male"/>
-                        <core:ListItem key="Other" text="Other"/>
-                    </items>
-                </ComboBox>
+                <HBox class="formRow">
+                    <Label text="Date of Birth" class="formLabel"/>
+                    <DatePicker id="dobPicker" liveChange="onValidateDOB" class="formInput" width="180px"/>
+                </HBox>
 
-                <Label text="Select Nationality"/>
-                <ComboBox id="nationalityComboBox" change="onValidate">
-                    <items>
-                        <core:ListItem key="Indian" text="Indian"/>
-                        <core:ListItem key="American" text="American"/>
-                        <core:ListItem key="British" text="British"/>
-                        <core:ListItem key="Canadian" text="Canadian"/>
-                        <core:ListItem key="Australian" text="Australian"/>
-                    </items>
-                </ComboBox>
-            
-             
+                <HBox class="formRow">
+                    <Label text="Email" class="formLabel"/>
+                    <Input id="email" type="Email" liveChange="onValidateEmail" class="formInput"/>
+                </HBox>
 
-                <Label text="Address"/>
-                <Input id="Houseno" liveChange="onValidate"/>
-                <Label text="House No" />
-                <Input id="Street" liveChange="onValidate"/>
-                <Label text="Street"/>
-                <Input id="City" liveChange="onValidate"/>
-                <Label text="City"/>
-                <Input id="State" liveChange="onValidate"/>
-                <Label text="State"/>
-                <Input id="Country" liveChange="onValidate"/>
-                <Label text="Country"/>
-                <Input id="ZipCode" liveChange="onValidateZip"/>
-                <Label text="Zip Code"/>    
-                          
-                
-                <Button text="Next" press="onNext"/>
+                <HBox class="formRow">
+                    <Label text="Phone" class="formLabel"/>
+                    <Input id="phoneInput" type="Tel" liveChange="onValidatePhone" class="formInput"/>
+                </HBox>
+
+                <HBox class="formRow">
+                    <Label text="Select Gender" class="formLabel"/>
+                    <ComboBox id="GenderComboBox" change="onValidate" class="formInput" width="180px">
+                        <items>
+                            <core:ListItem key="Female" text="Female"/>
+                            <core:ListItem key="Male" text="Male"/>
+                            <core:ListItem key="Other" text="Other"/>
+                        </items>
+                    </ComboBox>
+                </HBox>
+
+                <HBox class="formRow">
+                    <Label text="Select Nationality" class="formLabel"/>
+                    <ComboBox id="nationalityComboBox" change="onValidate" class="formInput" width="180px">
+                        <items>
+                            <core:ListItem key="Indian" text="Indian"/>
+                            <core:ListItem key="American" text="American"/>
+                            <core:ListItem key="British" text="British"/>
+                            <core:ListItem key="Canadian" text="Canadian"/>
+                            <core:ListItem key="Australian" text="Australian"/>
+                        </items>
+                    </ComboBox>
+                </HBox>
+
+                <HBox class="formRow">
+                    <Label text="Address" class="formLabel"/>
+                    <Input id="Address" liveChange="onValidate" class="formInput"/>
+                </HBox>
+
+                <HBox class="formRow">
+                    <Label text="City" class="formLabel"/>
+                    <Input id="City" liveChange="onValidate" class="formInput"/>
+                </HBox>
+
+                <HBox class="formRow">
+                    <Label text="State" class="formLabel"/>
+                    <Input id="State" liveChange="onValidate" class="formInput"/>
+                </HBox>
+
+                <HBox class="formRow">
+                    <Label text="Country" class="formLabel"/>
+                    <Input id="Country" liveChange="onValidate" class="formInput"/>
+                </HBox>
+
+                <HBox class="formRow">
+                    <Label text="Zip Code" class="formLabel"/>
+                    <Input id="ZipCode" liveChange="onValidateZip" class="formInput"/>
+                </HBox>
+
+                <Button text="Next" press="onNext" class="sapUiSmallMarginTop" width="150px"/>
             </VBox>
         </content>
     </Page>
