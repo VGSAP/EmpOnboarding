@@ -6,55 +6,68 @@ sap.ui.define([
     "use strict";
 
     return Controller.extend("project.controller.employee", {
+        
         onNext: function () {
-            var firstName = this.byId("firstname").getValue();
-            var lastName = this.byId("lastname").getValue();
-            var dob = this.byId("dobPicker").getDateValue();
-            var email = this.byId("email").getValue();
-            var phone = this.byId("phoneInput").getValue();
-            var gender = this.byId("GenderComboBox").getSelectedKey();
-            var nationality = this.byId("nationalityComboBox").getSelectedKey();
-            var address = this.byId("Address").getValue();
-            var city = this.byId("City").getValue();
-            var state = this.byId("State").getValue();
-            var country = this.byId("Country").getValue();
-            var zipCode = this.byId("ZipCode").getValue();
+            var oModel = this.getView().getModel("onboarding");
+            
+            // Set the model to the view
+            var personalData = {
+                firstName: this.byId("firstname").getValue(),
+                lastName: this.byId("lastname").getValue(),
+                dob: this.byId("dobPicker").getDateValue(), // Get Date Object
+                email: this.byId("email").getValue(),
+                phone: this.byId("phoneInput").getValue(),
+                gender: this.byId("GenderComboBox").getSelectedKey(),
+                nationality: this.byId("nationalityComboBox").getSelectedKey(),
+                address: this.byId("Address").getValue(),
+                city: this.byId("City").getValue(),
+                state: this.byId("State").getValue(),
+                country: this.byId("Country").getValue(),
+                zipCode: this.byId("ZipCode").getValue()
+            };
         
             var emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/; // Ensure email is Gmail format
             var phoneRegex = /^[0-9]{10}$/; // Ensure phone number is exactly 10 digits
             var today = new Date();
-        
             var errorMessage = "";
-        
-            // Check mandatory fields
-            if (!firstName || !lastName || !dob || !email || !phone || !gender || !nationality || !address || !city || !state || !country || !zipCode) {
-                errorMessage += "All fields marked with * must be filled.\n";
+
+            // Ensure DOB is properly formatted
+            if (personalData.dob) {
+                personalData.dob = personalData.dob.toISOString().split("T")[0]; // Convert to "YYYY-MM-DD"
             }
-        
+
+            // Check mandatory fields
+            Object.keys(personalData).forEach(function (key) {
+                if (!personalData[key]) {
+                    errorMessage += `${key} is required.\n`;
+                }
+            });
+
             // Date of birth validation (must be before today)
-            if (dob >= today) {
+            if (personalData.dob >= today.toISOString().split("T")[0]) {
                 errorMessage += "Date of Birth must be before today.\n";
             }
-        
+
             // Email validation
-            if (!emailRegex.test(email)) {
+            if (!emailRegex.test(personalData.email)) {
                 errorMessage += "Email must be in the format 'abc@gmail.com'.\n";
             }
-        
+
             // Phone validation
-            if (!phoneRegex.test(phone)) {
+            if (!phoneRegex.test(personalData.phone)) {
                 errorMessage += "Phone number must be exactly 10 digits.\n";
             }
-        
+
             if (errorMessage) {
                 MessageBox.error(errorMessage); // Display validation errors
             } else {
-                MessageToast.show("Validation successful!");
-                // Proceed to next step or submit form
+                // Corrected: Store personalData in model
+                oModel.setProperty("/personalDetails", personalData);
+                console.log(this.getView().getModel("onboarding"));
+
                 var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
                 oRouter.navTo("education");
             }
         }
-        
     });
 });

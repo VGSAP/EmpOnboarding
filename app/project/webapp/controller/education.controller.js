@@ -7,53 +7,32 @@ sap.ui.define([
 
     return Controller.extend("project.controller.education", {
         onNext: function () {
-            function isEmpty(value) {
-                return !value || value.trim() === "";
+            var educationData = {  // Define the object before using it
+                highestQualification: this.byId("highestQualification").getSelectedKey(),
+                branch: this.byId("Branch").getSelectedKey(),
+                collegeName: this.byId("collegeName").getValue(),
+                percentage: this.byId("percentage").getValue(),
+                highSchoolStream: this.byId("highSchoolStream").getSelectedKey(),
+                highSchool: this.byId("highSchool").getValue(),
+                highSchoolPercentage: this.byId("highSchoolPercentage").getValue(),
+                school: this.byId("school").getValue(),
+                schoolPercentage: this.byId("schoolPercentage").getValue()
+            };
+            console.log(this.getView().getModel("onboarding"));
+            var oModel = this.getView().getModel("onboarding");
+        
+            if (!oModel) {
+                MessageBox.error("Model 'onboarding' is not found!");
+                return;
             }
-
-            var highestQualification = this.byId("highestQualification").getSelectedKey();
-            var branch = this.byId("Branch").getSelectedKey();
-            var collegeName = this.byId("collegeName").getValue();
-            var percentage = this.byId("percentage").getValue();
-
-            var highSchoolStream = this.byId("highSchoolStream").getSelectedKey();
-            var highSchoolName = this.byId("highSchool").getValue();
-            var highSchoolPercentage = this.byId("highSchoolPercentage").getValue();
-
-            var schoolName = this.byId("school").getValue();
-            var schoolPercentage = this.byId("schoolPercentage").getValue();
-
-            var percentageRegex = /^(100|[1-9]?[0-9])$/;
-            var errorMessage = "";
-
-            // Mandatory field validation
-            if (
-                isEmpty(highestQualification) || isEmpty(branch) || isEmpty(collegeName) || isEmpty(percentage) ||
-                isEmpty(highSchoolStream) || isEmpty(highSchoolName) || isEmpty(highSchoolPercentage) ||
-                isEmpty(schoolName) || isEmpty(schoolPercentage)
-            ) {
-                errorMessage += "All fields marked with * are required.\n";
-            }
-
-            // Percentage validation
-            if (!percentageRegex.test(percentage)) {
-                errorMessage += "College Percentage must be a number between 0-100.\n";
-            }
-            if (!percentageRegex.test(highSchoolPercentage)) {
-                errorMessage += "High School Percentage must be a number between 0-100.\n";
-            }
-            if (!percentageRegex.test(schoolPercentage)) {
-                errorMessage += "School Percentage must be a number between 0-100.\n";
-            }
-
-            if (!errorMessage == "") {
-                MessageBox.error(errorMessage);
-            } else {
-                MessageToast.show("Education details validated successfully!");
-                var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-                oRouter.navTo("document");
-            }
+        
+            oModel.setProperty("/educationDetails", educationData);
+        
+            var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+            oRouter.navTo("document");
         },
+        
+        
         onPrevious: function () {
             var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
             oRouter.navTo("employee");

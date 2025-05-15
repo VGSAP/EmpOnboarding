@@ -15,6 +15,12 @@ sap.ui.define([
         init() {
             // call the base component's init function
             UIComponent.prototype.init.apply(this, arguments);
+                var oModel = new sap.ui.model.json.JSONModel({
+                    personalDetails: {},
+                    educationDetails: {}
+                });
+            
+                this.setModel(oModel, "onboarding"); // Attach globally to the app
 
             // set the device model
             this.setModel(models.createDeviceModel(), "device");
