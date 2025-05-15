@@ -13,9 +13,10 @@
                 <Title text="Employee Onboarding" />
             </contentLeft>
             <contentRight>
-                <Button icon="sap-icon://home" tooltip="Dashboard"/>
-                <Button icon="sap-icon://add" tooltip="Add Employee"/>
-                <Button icon="sap-icon://accept" tooltip="Verify Documents"/>
+                <Button icon="sap-icon://home" tooltip="Dashboard" press=".onNavTohome"/>
+<Button icon="sap-icon://add" tooltip="Add Employee" press=".onNavToEmployee"/>
+<Button icon="sap-icon://accept" tooltip="Verify Documents" press=".onNavToVerify"/>
+
             </contentRight>
         </Bar>
     </customHeader>

@@ -108,9 +108,7 @@
         {
           "name": "home",
           "pattern": "",
-          "target": [
-            "Targethome"
-          ]
+          "target": "Targethome"
         },
         {
           "name": "employee",
@@ -120,17 +118,27 @@
         {
           "name": "education",
           "pattern": "education",
-          "target" : "education"
+          "target": "education"
         },
         {
           "name": "document",
           "pattern": "document",
-          "target" : "document"
+          "target": "document"
         },
         {
           "name": "hr",
           "pattern": "hr",
-          "target" : "hr"
+          "target": "hr"
+        },
+        {
+          "name": "login",
+          "pattern": "login",
+          "target": "Login"
+        },
+        {
+          "name": "verify",
+          "pattern": "verify",
+          "target": "Verify"
         }
       ],
       "targets": {
@@ -142,19 +150,26 @@
           "id": "employee",
           "name": "employee"
         },
-        "education" : {
+        "education": {
           "id": "education",
           "name": "education"
-
         },
-        "document" : {
+        "document": {
           "id": "document",
           "name": "document"
-
         },
-        "hr" : {
+        "hr": {
           "id": "hr",
           "name": "hr"
+        },
+        "Login": {
+          "viewName": "home"
+        },
+        "Employee": {
+          "viewName": "Employee"
+        },
+        "Verify": {
+          "viewName": "Verify"
         }
       }
     },
