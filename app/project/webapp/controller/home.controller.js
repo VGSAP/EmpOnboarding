@@ -98,29 +98,31 @@ sap.ui.define([
                 MessageToast.show("All fields are required.\n");
             }
         
-            var oData = {
-                id: new Date().getTime().toString(),
-                name : name,
-                email: email,
-                mobilenumber: mobilenumber,
-                password: password,
-                role: "User"
-            };
-            console.log(oData);
-            $.ajax({
-                url: window.location.origin + "/odata/v4/onboarding/Users",
-                type: "POST",
-                contentType: "application/json",
-                data: JSON.stringify(oData),
-                success: function () {
-                    MessageToast.show("Registration successful!");
-                    this.getView().byId("registerDialog").close();
-                    
-                }.bind(this),
-                error: function (xhr) {
-                    console.log("Raw error response:", xhr.responseText);
-                }
-            });
+            else{
+                var oData = {
+                    id: new Date().getTime().toString(),
+                    name : name,
+                    email: email,
+                    mobilenumber: mobilenumber,
+                    password: password,
+                    role: "User"
+                };
+                console.log(oData);
+                $.ajax({
+                    url: window.location.origin + "/odata/v4/onboarding/Users",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify(oData),
+                    success: function () {
+                        MessageToast.show("Registration successful!");
+                        this.getView().byId("registerDialog").close();
+                        
+                    }.bind(this),
+                    error: function (xhr) {
+                        console.log("Raw error response:", xhr.responseText);
+                    }
+                });
+            }
         },
 
         onCancelRegister: function() {
