@@ -1,0 +1,72 @@
+<mvc:View
+    controllerName="project.controller.verify"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    displayBlock="true">
+
+    <Page title="Employee Document Verification">
+        
+        <customHeader>
+            <Bar>
+                <contentLeft>
+                    <Title text="Verify Employee Documents"/>
+                </contentLeft>
+                <contentRight>
+                    <Button icon="sap-icon://home" tooltip="Home" press=".onNavTohome"/>
+                    <Button icon="sap-icon://accept" tooltip="Approve Documents" press=".onApprove"/>
+                    <Button icon="sap-icon://decline" tooltip="Reject Documents" press=".onReject"/>
+                </contentRight>
+            </Bar>
+        </customHeader>
+
+        <VBox class="verification-container">
+            <!-- Page Title -->
+            <VBox class="verification-header">
+                <Title text="Documents Pending Verification" level="H1"/>
+            </VBox>
+
+            <!-- Pending Documents List -->
+            <List items="{/pendingDocuments}">
+                <CustomListItem>
+                    <VBox class="document-card">
+                        <HBox class="document-card-header">
+                            <Text text="{employeeName}" class="document-card-title"/>
+                            <core:Icon src="sap-icon://doc-attachment" class="document-card-icon"/>
+                        </HBox>
+                        <VBox class="document-card-content">
+                            <Text text="Document Type: {documentType}" class="document-detail"/>
+                            <Text text="Submission Date: {submissionDate}" class="document-detail"/>
+                            <HBox>
+                                <Button text="Approve" press=".onApprove" class="approve-button"/>
+                                <Button text="Reject" press=".onReject" class="reject-button"/>
+                            </HBox>
+                        </VBox>
+                    </VBox>
+                </CustomListItem>
+            </List>
+
+            <!-- Employee Details Section -->
+            <VBox class="employee-details full-width">
+                <VBox class="employee-details-header">
+                    <Text text="Employee Details" class="employee-details-title"/>
+                </VBox>
+                <VBox class="employee-details-content">
+                    <List items="{/employees}">
+                        <CustomListItem class="employee-item">
+                            <VBox>
+                                <Text text="Name: {name}" class="employee-name"/>
+                                <Text text="Department: {department}" class="employee-department"/>
+                                <Text text="Email: {email}" class="employee-email"/>
+                                <Text text="Phone: {phone}" class="employee-phone"/>
+                                <Text text="Status: {status}" class="employee-status"/>
+                            </VBox>
+                        </CustomListItem>
+                    </List>
+                </VBox>
+            </VBox>
+
+        </VBox>
+        
+    </Page>
+</mvc:View>

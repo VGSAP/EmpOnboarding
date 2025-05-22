@@ -1,0 +1,20 @@
+<mvc:View
+    controllerName="project.controller.rejectedDocuments"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    
+    <Page title="Rejected Documents">
+        <VBox>
+            <Title text="Rejected Documents" level="H1"/>
+            <List items="{/rejectedDocuments}">
+                <CustomListItem>
+                    <VBox>
+                        <Text text="{employeeName}" class="document-name"/>
+                        <Text text="Document Type: {documentType}" class="document-detail"/>
+                        <Text text="Submission Date: {submissionDate}" class="document-detail"/>
+                    </VBox>
+                </CustomListItem>
+            </List>
+        </VBox>
+    </Page>
+</mvc:View>

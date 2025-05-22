@@ -499,5 +499,189 @@ body {
         width: 250px;
         text-align: right;
     }
+
+  /* Base styling */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #f2f2f2;
+}
+
+/* Header section */
+.dashboard-header {
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #d9d9d9;
+}
+
+.dashboard-header .Title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  color: #333333;
+}
+
+/* Custom Header */
+.space {
+  padding: 1rem;
+}
+
+.Bar .Title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0A6ED1;
+}
+
+.Bar .Button {
+  margin-left: 10px;
+}
+
+/* Stats Cards */
+.stats-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.stat-card {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.5rem;
+}
+
+.stat-card-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #737373;
+}
+
+.stat-card-icon {
+  font-size: 1.5rem;
+  color: #0A6ED1;
+}
+
+.stat-card-content {
+  padding-top: 0.5rem;
+}
+
+.stat-card-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333333;
+}
+
+.stat-card-description {
+  font-size: 0.875rem;
+  color: #737373;
+}
+
+/* Document Verification Section */
+.document-card {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
+}
+
+.document-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.document-card-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333333;
+}
+
+.document-card-icon {
+  font-size: 1.5rem;
+  color: #0A6ED1;
+}
+
+.document-detail {
+  font-size: 0.875rem;
+  color: #555;
+}
+
+.approve-button {
+  background-color: #4CAF50;
+  color: white;
+  margin-right: 10px;
+}
+
+.reject-button {
+  background-color: #E53935;
+  color: white;
+}
+
+/* Employee Details */
+.directory-card {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+}
+
+.directory-card-header {
+  padding-bottom: 1rem;
+}
+
+.employee-list-container {
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 10px;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+}
+
+.employee-item {
+  background-color: #f9fafb;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.employee-item:hover {
+  background-color: #e5e5e5;
+}
+
+.employee-name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333333;
+}
+
+.employee-department {
+  font-size: 0.875rem;
+  color: #737373;
+}
+
+.employee-email {
+  font-size: 0.75rem;
+  color: #0A6ED1;
+  text-decoration: none;
+}
+
+.employee-email:hover {
+  text-decoration: underline;
+}
+
         
 >>>>>>> 6dc5862d087448a44b07235156a3cd3a83767028

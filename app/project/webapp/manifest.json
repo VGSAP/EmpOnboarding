@@ -138,8 +138,18 @@
         {
           "name": "verify",
           "pattern": "verify",
-          "target": "Verify"
-        }
+          "target": "verify"
+        },
+        {
+          "name": "verified",
+          "pattern": "verified",
+          "target": "verified"
+      },
+      {
+          "name": "rejectedDocuments",
+          "pattern": "rejected",
+          "target": "rejectedDocuments"
+      }
       ],
       "targets": {
         "Targethome": {
@@ -166,11 +176,19 @@
           "viewName": "home"
         },
         "Employee": {
-          "viewName": "Employee"
+          "viewName": "hr"
         },
-        "Verify": {
-          "viewName": "Verify"
-        }
+        "verify": {
+          "viewName": "verify"
+        },
+        "verifiedDocuments": {
+        "viewName": "verified",
+        "viewType": "XML"
+    },
+    "rejectedDocuments": {
+        "viewName": "RejectedDocuments",
+        "viewType": "XML"
+    }
       }
     },
     "rootView": {
