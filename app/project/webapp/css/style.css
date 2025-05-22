@@ -2,17 +2,22 @@
         background-color: whitesmoke;
         height: 50px;
     }
-    .pagetitle {
-        font-size: larger;
-        padding-top: 5px;
-        padding-bottom: 10px;
-        color: black;
+    .pageContainer {
+      display:flex;
+      height: 100%;
+      overflow: hidden;     
+  }
+    .image{
+      width:145%;
+      height:107%;
+     
     }
     .loginContainer {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        width: 25%;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -33,19 +38,8 @@
         border: none;
         transition: background-color 0.3s ease;
     }
-    .pageContainer {
-        display: flex;
-        height: 100vh;
-    }
-    .imageContainer, .loginSection {
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    .imageContainer {
-        background-color: #f0f0f0; /* Optional: Add a background color */
-    }
+    
+
     .loginSection {
         display: flex;
         flex-direction: column;

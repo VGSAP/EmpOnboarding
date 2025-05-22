@@ -2,24 +2,26 @@
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:core="sap.ui.core">
-    <Page class="background" showHeader="false">
-        <HBox class="pageContainer">
-            <VBox class="imageContainer">
-                <Image src="https://campbuzz.ltimindtree.com/Images/Mask_Group.png" alt="Image"/>
-            </VBox>
+    <Page showHeader="false" class = "pgclass">
 
-            <VBox class="loginSection" alignItems="Center" justifyContent="Center">
+        <HBox class="pageContainer">
+            
+            <Image src="assets/planeimage.png" alt="Image" class="image"/>
+
+            
                 <VBox class="loginContainer" alignItems="Start" justifyContent="Center">
                     <Image src="https://campbuzz.ltimindtree.com/Images/ltimindtree.svg" alt="LTIMindtree Logo" class="logo"/>
-                    <Title text="Welcome to Onboarding Portal" class="pagetitle"></Title>
-                    <Label text="Username" class="requiredLabel"/>
+
+                    <Label text="Email" class="requiredLabel"/>
                     <Input id="emailInput" type="Email" class="fullWidth"/>
+
                     <Label text="Password" class="requiredLabel"/>
                     <Input id="passwordInput" type="Password" class="fullWidth"/>
+                    
                     <Button text="Login" press="onLogin" class="centeredButton"/>
                     <Link text="Don't have an account? Register" press="onOpenRegisterDialog"/>
                 </VBox>
-            </VBox>
+            
         </HBox>
 
         <Dialog id="registerDialog" title="Register">
