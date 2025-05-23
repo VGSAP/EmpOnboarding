@@ -39,8 +39,8 @@
                             <Text text="Submission Date: {submissionDate}" class="document-detail"/>
                             <Text text="Status: {status}" class="document-detail"/>
                             <HBox>
-                                <Button text="Approve" press=".onApprove" class="approve-button"/>
-                                <Button text="Reject" press=".onReject" class="reject-button"/>
+                                <Button text="Approve" type="Accept" press=".onApprove" class="approve-button"/>
+                                <Button text="Reject" type="Reject" press=".onReject" class="reject-button"/>
                             </HBox>
                         </VBox>
                     </VBox>
