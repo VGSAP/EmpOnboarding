@@ -18,18 +18,22 @@ sap.ui.define([
                 school: this.byId("school").getValue(),
                 schoolPercentage: this.byId("schoolPercentage").getValue()
             };
-            console.log(this.getView().getModel("onboarding"));
+            var anyFieldEmpty = Object.values(educationData).some(value => !value);
+            if (anyFieldEmpty) {
+                MessageBox.error("All fields are required.");
+                return;
+            }
             var oModel = this.getView().getModel("onboarding");
-        
             if (!oModel) {
                 MessageBox.error("Model 'onboarding' is not found!");
                 return;
             }
+            else{
+                oModel.setProperty("/educationDetails", educationData);
         
-            oModel.setProperty("/educationDetails", educationData);
-        
-            var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-            oRouter.navTo("document");
+                var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+                oRouter.navTo("document");
+            }
         },
         
         

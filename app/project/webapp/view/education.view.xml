@@ -10,7 +10,7 @@
                 <Title text="Education Information" class="sapUiSmallMarginBottom"/>
 
                 <HBox class="formRow">
-                    <Label text="Highest Qualification *" class="formLabel"/>
+                    <Label text="Highest Qualification" class="formLabel"/>
                     <ComboBox id="highestQualification" class="formInput" width="180px">
                         <items>
                             <core:Item key="Bachelor" text="Bachelor's Degree"/>
@@ -22,7 +22,7 @@
                 </HBox>
 
                 <HBox class="formRow">
-                    <Label text="Branch *" class="formLabel"/>
+                    <Label text="Branch" class="formLabel"/>
                     <ComboBox id="Branch" class="formInput" width="180px">
                         <items>
                             <core:Item key="Computer Science" text="Computer Science"/>
@@ -34,17 +34,17 @@
                 </HBox>
 
                 <HBox class="formRow">
-                    <Label text="College/University *" class="formLabel"/>
+                    <Label text="College/University" class="formLabel"/>
                     <Input id="collegeName" placeholder="Enter college/university name" class="formInput"/>
                 </HBox>
 
                 <HBox class="formRow">
-                    <Label text="Percentage *" class="formLabel"/>
+                    <Label text="Percentage" class="formLabel"/>
                     <Input id="percentage" type="Number" placeholder="Enter percentage" class="formInput"/>
                 </HBox>
 
                 <HBox class="formRow">
-                    <Label text="High School Stream *" class="formLabel"/>
+                    <Label text="High School Stream" class="formLabel"/>
                     <ComboBox id="highSchoolStream" class="formInput" width="180px">
                         <items>
                             <core:Item key="MPC" text="MPC"/>
@@ -54,28 +54,28 @@
                 </HBox>
 
                 <HBox class="formRow">
-                    <Label text="High School *" class="formLabel"/>
+                    <Label text="High School" class="formLabel"/>
                     <Input id="highSchool" placeholder="Enter high school name" class="formInput"/>
                 </HBox>
 
                 <HBox class="formRow">
-                    <Label text="Percentage *" class="formLabel"/>
+                    <Label text="Percentage" class="formLabel"/>
                     <Input id="highSchoolPercentage" type="Number" placeholder="Enter percentage" class="formInput"/>
                 </HBox>
 
                 <HBox class="formRow">
-                    <Label text="School *" class="formLabel"/>
+                    <Label text="School " class="formLabel"/>
                     <Input id="school" placeholder="Enter school name" class="formInput"/>
                 </HBox>
 
                 <HBox class="formRow">
-                    <Label text="Percentage *" class="formLabel"/>
+                    <Label text="Percentage " class="formLabel"/>
                     <Input id="schoolPercentage" type="Number" placeholder="Enter percentage" class="formInput"/>
                 </HBox>
 
                 <HBox class="formRow">
-                    <Button text="Previous" press="onPrevious" class="sapUiSmallMarginTop sapUiSmallMarginEnd" width="120px"/>
-                    <Button text="Next" press="onNext" class="sapUiSmallMarginTop" width="120px"/>
+                    <Button text="Previous" press="onPrevious" width="120px" class="onbutton"/>
+                    <Button text="Next" press="onNext" width="120px" class="onbutton"/>
                 </HBox>
             </VBox>
         </content>

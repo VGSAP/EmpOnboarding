@@ -11,33 +11,33 @@
                 <Title text="Upload Documents" class="sapUiSmallMarginBottom"/>
 
                 <HBox class="formRow">
-                    <Label text="Upload Degree Certificate *" class="formLabel"/>
-                    <unified:FileUploader id="degreeDocument" buttonText="Upload Document" uploadUrl="/upload" change="onFileUpload" class="formInput"/>
+                    <Label text="Degree Certificate" class="formLabel"/>
+                    <unified:FileUploader id="degreeDocument" icon="sap-icon://upload" iconOnly="false"  uploadUrl="/upload" change="onFileUpload" class="formInput"/>
                 </HBox>
 
                 <HBox class="formRow">
-                    <Label text="Upload High School Certificate *" class="formLabel"/>
-                    <unified:FileUploader id="highSchoolDocument" buttonText="Upload Document" uploadUrl="/upload" change="onFileUpload" class="formInput"/>
+                    <Label text="High School Certificate" class="formLabel"/>
+                    <unified:FileUploader id="highSchoolDocument" icon="sap-icon://upload" iconOnly="false"  uploadUrl="/upload" change="onFileUpload" class="formInput"/>
                 </HBox>
 
                 <HBox class="formRow">
-                    <Label text="Upload School Certificate *" class="formLabel"/>
-                    <unified:FileUploader id="schoolDocument" buttonText="Upload Document" uploadUrl="/upload" change="onFileUpload" class="formInput"/>
+                    <Label text="School Certificate" class="formLabel"/>
+                    <unified:FileUploader id="schoolDocument" icon="sap-icon://upload" iconOnly="false" uploadUrl="/upload" change="onFileUpload" class="formInput"/>
                 </HBox>
 
                 <HBox class="formRow">
-                    <Label text="Aadhar Card *" class="formLabel"/>
-                    <unified:FileUploader id="AadharDocument" buttonText="Upload Document" uploadUrl="/upload" change="onFileUpload" class="formInput"/>
+                    <Label text="Aadhar Card" class="formLabel"/>
+                    <unified:FileUploader id="AadharDocument" icon="sap-icon://upload" iconOnly="false"  uploadUrl="/upload" change="onFileUpload" class="formInput"/>
                 </HBox>
 
                 <HBox class="formRow">
-                    <Label text="Upload Resume *" class="formLabel"/>
-                    <unified:FileUploader id="Resume" buttonText="Upload Document" uploadUrl="/upload" change="onFileUpload" class="formInput"/>
+                    <Label text="Resume" class="formLabel"/>
+                    <unified:FileUploader id="Resume" icon="sap-icon://upload" iconOnly="false"  uploadUrl="/upload" change="onFileUpload" class="formInput"/>
                 </HBox>
 
                 <HBox class="formRow">
-                    <Button text="Previous" press="onPrevious" class="sapUiSmallMarginTop sapUiSmallMarginEnd" width="120px"/>
-                    <Button text="Submit" press="onsubmit" class="sapUiSmallMarginTop" width="120px"/>
+                    <Button text="Previous" press="onPrevious" class="onbutton" width="120px"/>
+                    <Button text="Submit" press="onsubmit" class="onbutton" width="120px"/>
                 </HBox>
             </VBox>
         </content>

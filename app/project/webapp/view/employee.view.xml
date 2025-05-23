@@ -3,40 +3,40 @@
     xmlns="sap.m"
     xmlns:core="sap.ui.core"
     controllerName="project.controller.employee">
-    <Page title="Employee Onboarding">
+    <Page title="Employee Form">
         <content>
-            <VBox alignItems="Center" justifyContent="Center" class="sapUiSmallMargin">
+            <VBox alignItems="Center" justifyContent="Center">
                 <Title text="Personal Details" class="sapUiSmallMarginBottom"/>
 
                 <!-- Each HBox contains one label and one input field -->
                 <HBox class="formRow">
                     <Label text="First Name" class="formLabel"/>
-                    <Input id="firstname" liveChange="onValidate" class="formInput"/>
+                    <Input id="firstname"  class="formInput" required="true"/>
                 </HBox>
 
                 <HBox class="formRow">
                     <Label text="Last Name" class="formLabel"/>
-                    <Input id="lastname" liveChange="onValidate" class="formInput"/>
+                    <Input id="lastname"  class="formInput"/>
                 </HBox>
 
                 <HBox class="formRow">
                     <Label text="Date of Birth" class="formLabel"/>
-                    <DatePicker id="dobPicker" liveChange="onValidateDOB" class="formInput" width="180px"/>
+                    <DatePicker id="dobPicker"  class="formInput" width="180px"/>
                 </HBox>
 
                 <HBox class="formRow">
                     <Label text="Email" class="formLabel"/>
-                    <Input id="email" type="Email" liveChange="onValidateEmail" class="formInput"/>
+                    <Input id="email" type="Email" class="formInput"/>
                 </HBox>
 
                 <HBox class="formRow">
                     <Label text="Phone" class="formLabel"/>
-                    <Input id="phoneInput" type="Tel" liveChange="onValidatePhone" class="formInput"/>
+                    <Input id="phoneInput" type="Tel"  class="formInput"/>
                 </HBox>
 
                 <HBox class="formRow">
                     <Label text="Select Gender" class="formLabel"/>
-                    <ComboBox id="GenderComboBox" change="onValidate" class="formInput" width="180px">
+                    <ComboBox id="GenderComboBox" class="formInput" width="180px">
                         <items>
                             <core:ListItem key="Female" text="Female"/>
                             <core:ListItem key="Male" text="Male"/>
@@ -47,7 +47,7 @@
 
                 <HBox class="formRow">
                     <Label text="Select Nationality" class="formLabel"/>
-                    <ComboBox id="nationalityComboBox" change="onValidate" class="formInput" width="180px">
+                    <ComboBox id="nationalityComboBox"  class="formInput" width="180px">
                         <items>
                             <core:ListItem key="Indian" text="Indian"/>
                             <core:ListItem key="American" text="American"/>
@@ -60,30 +60,30 @@
 
                 <HBox class="formRow">
                     <Label text="Address" class="formLabel"/>
-                    <Input id="Address" liveChange="onValidate" class="formInput"/>
+                    <Input id="Address"  class="formInput"/>
                 </HBox>
 
                 <HBox class="formRow">
                     <Label text="City" class="formLabel"/>
-                    <Input id="City" liveChange="onValidate" class="formInput"/>
+                    <Input id="City"  class="formInput"/>
                 </HBox>
 
                 <HBox class="formRow">
                     <Label text="State" class="formLabel"/>
-                    <Input id="State" liveChange="onValidate" class="formInput"/>
+                    <Input id="State"  class="formInput"/>
                 </HBox>
 
                 <HBox class="formRow">
                     <Label text="Country" class="formLabel"/>
-                    <Input id="Country" liveChange="onValidate" class="formInput"/>
+                    <Input id="Country"  class="formInput"/>
                 </HBox>
 
                 <HBox class="formRow">
                     <Label text="Zip Code" class="formLabel"/>
-                    <Input id="ZipCode" liveChange="onValidateZip" class="formInput"/>
+                    <Input id="ZipCode"  class="formInput"/>
                 </HBox>
 
-                <Button text="Next" press="onNext" class="sapUiSmallMarginTop" width="150px"/>
+                <Button text="Next" press="onNext" class="onbutton" width="150px"/>
             </VBox>
         </content>
     </Page>

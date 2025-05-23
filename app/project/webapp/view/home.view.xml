@@ -17,38 +17,42 @@
 
                     <Label text="Password" class="requiredLabel"/>
                     <Input id="passwordInput" type="Password" class="fullWidth"/>
-                    
+
                     <Button text="Login" press="onLogin" class="centeredButton"/>
-                    <Link text="Don't have an account? Register" press="onOpenRegisterDialog"/>
+
+                    <Link text="Don't have an account? Register" press="onOpenRegisterDialog" class="registerlink"/>
                 </VBox>
             
         </HBox>
 
-        <Dialog id="registerDialog" title="Register">
-            <VBox class="registerContainer" alignItems="Start" justifyContent="Center">
-                <Label text="Full Name" class="requiredLabel"/>
-                <Input id="nameInput" class="fullWidth"/>
+                <Dialog id="registerDialog" title="Register">
+                    <VBox class="reg-form-container" alignItems="Start" justifyContent="Center">
+                        <Label text="Full Name" class="reg-label"/>
+                        <Input id="nameInput" class="reg-input"/>
 
-                <Label text="Mobile Number" class="requiredLabel"/>
-                <Input id="mobilenumber"  class="fullWidth"/>
+                        <Label text="Mobile Number" class="reg-label"/>
+                        <Input id="mobilenumber" class="reg-input"/>
 
-                <Label text="Email" class="requiredLabel"/>
-                <Input id="regEmailInput" type="Email"  class="fullWidth"/>
+                        <Label text="Email" class="reg-label"/>
+                        <Input id="regEmailInput" type="Email" class="reg-input"/>
 
-                <Label text="Password" class="requiredLabel"/>
-                <Input id="regPasswordInput" type="Password"  class="fullWidth"/>
+                        <Label text="Password" class="reg-label"/>
+                        <Input id="regPasswordInput" type="Password" class="reg-input"/>
 
-                <Label text="Confirm Password" class="requiredLabel"/>
-                <Input id="confirmpass" type="Password"  class="fullWidth"/>
+                        <Label text="Confirm Password" class="reg-label"/>
+                        <Input id="confirmpass" type="Password" class="reg-input"/>
 
-                <CheckBox id="terms" text="I agree to above Terms &amp; Conditions"/>
-            </VBox>
-            <beginButton>
-                <Button text="Register" press="onRegister" class="centeredButton"/>
-            </beginButton>
-            <endButton>
-                <Button text="Cancel" press="onCancelRegister" class="centeredButton"/>
-            </endButton>
-        </Dialog>
+                        <CheckBox id="terms" text="I agree to the Terms &amp; Conditions" class="reg-checkbox"/>
+                    </VBox>
+
+                    <beginButton>
+                        <Button text="Register" press="onRegister" class="reg-button reg-button"/>
+                    </beginButton>
+
+                    <endButton>
+                        <Button text="Cancel" press="onCancelRegister" class="reg-button reg-button"/>
+                    </endButton>
+                    </Dialog>
+
     </Page>
 </mvc:View>
