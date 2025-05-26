@@ -5,6 +5,27 @@ sap.ui.define([
     "use strict";
 
     return Controller.extend("project.controller.home", {
+
+        onPasswordInputChange: function (oEvent) {
+            var oInput = oEvent.getSource();
+            var sValue = oInput.getValue();
+
+            // Show icon only if there's input
+            oInput.setShowValueHelp(!!sValue);
+        },
+
+        ontoggle: function (oEvent) {
+            var oInput = this.byId("passwordInput");
+            var sCurrentType = oInput.getType();
+
+            // Toggle between Password and Text
+            var bIsPassword = sCurrentType === "Password";
+            oInput.setType(bIsPassword ? "Text" : "Password");
+
+            // Optionally toggle the icon as well
+            oInput.setValueHelpIconSrc(bIsPassword ? "sap-icon://hide" : "sap-icon://show");
+        },
+
         onLogin: function () {
             var email = this.getView().byId("emailInput").getValue();
             var password = this.getView().byId("passwordInput").getValue();

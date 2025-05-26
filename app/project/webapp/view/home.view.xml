@@ -16,7 +16,8 @@
                     <Input id="emailInput" type="Email" class="fullWidth"/>
 
                     <Label text="Password" class="requiredLabel"/>
-                    <Input id="passwordInput" type="Password" class="fullWidth"/>
+                    <Input id="passwordInput" type="Password" class="fullWidth" showValueHelp="false" valueHelpIconSrc="sap-icon://show" valueHelpRequest="ontoggle" liveChange="onPasswordInputChange"/>
+                    
 
                     <Button text="Login" press="onLogin" class="centeredButton"/>
 
