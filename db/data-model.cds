@@ -33,6 +33,7 @@ entity EmployeeDetails {
     highSchoolPercentage : Decimal(5,2);
     school              : String(100);
     schoolPercentage    : Decimal(5,2);
+    status              :String;
     
 
 }

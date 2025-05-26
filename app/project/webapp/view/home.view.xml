@@ -3,8 +3,10 @@
     xmlns="sap.m"
     xmlns:core="sap.ui.core">
     <Page showHeader="false" class = "pgclass">
+    
 
         <HBox class="pageContainer">
+           
             
             <Image src="assets/planeimage.png" alt="Image" class="image"/>
 

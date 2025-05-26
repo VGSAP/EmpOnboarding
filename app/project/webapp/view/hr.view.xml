@@ -5,22 +5,19 @@
     xmlns:core="sap.ui.core"
     displayBlock="true">
 
-    <Page >
-        
-<customHeader >
-        <Bar class="space">
-            <contentLeft>
-                <Title text="Employee Onboarding" />
-            </contentLeft>
-            <contentRight>
-                <Button icon="sap-icon://home" tooltip="Dashboard" press=".onNavTohome"/>
-<Button icon="sap-icon://add" tooltip="Add Employee" press=".onNavToEmployee"/>
-<Button icon="sap-icon://accept" tooltip="Verify Documents" press=".onNavToVerify"/>
-
-            </contentRight>
-        </Bar>
-    </customHeader>
-
+    <Page showHeader="true">
+        <customHeader>
+            <Bar class="space">
+                <contentLeft>
+                    <Title text="Employee Onboarding" />
+                </contentLeft>
+                <contentRight>
+                    <Button icon="sap-icon://home" tooltip="Dashboard" press=".onNavTohome"/>
+                    <Button icon="sap-icon://add" tooltip="Add Employee" press=".onNavToEmployee"/>
+                    <Button icon="sap-icon://accept" tooltip="Verify Documents" press=".onNavToVerify"/>
+                </contentRight>
+            </Bar>
+        </customHeader>
 
         <VBox class="dashboard-container">
             <!-- Page Title -->
@@ -36,7 +33,7 @@
                         <core:Icon src="sap-icon://employee" class="stat-card-icon"/>
                     </VBox>
                     <VBox class="stat-card-content">
-                        <ObjectNumber number="{/stats/registeredMembers}" class="stat-card-value" unit="0"/>
+                        <ObjectNumber number="{/stats/registeredMembers}" class="stat-card-value" unit="8"/>
                         <Text text="Total users in the system" class="stat-card-description"/>
                     </VBox>
                 </VBox>
@@ -47,7 +44,7 @@
                         <core:Icon src="sap-icon://doc-attachment" class="stat-card-icon"/>
                     </VBox>
                     <VBox class="stat-card-content">
-                        <ObjectNumber number="{/stats/pendingVerifications}" class="stat-card-value" unit="0"/>
+                        <ObjectNumber number="{/stats/pendingVerifications}" class="stat-card-value" unit="4"/>
                         <Text text="Documents awaiting manager approval" class="stat-card-description"/>
                     </VBox>
                 </VBox>
@@ -58,7 +55,7 @@
                         <core:Icon src="sap-icon://group" class="stat-card-icon"/>
                     </VBox>
                     <VBox class="stat-card-content">
-                        <ObjectNumber number="{/stats/newHiresThisMonth}" class="stat-card-value" unit="0"/>
+                        <ObjectNumber number="{/stats/newHiresThisMonth}" class="stat-card-value" unit="12"/>
                         <Text text="Employees joined in the current month" class="stat-card-description"/>
                     </VBox>
                 </VBox>

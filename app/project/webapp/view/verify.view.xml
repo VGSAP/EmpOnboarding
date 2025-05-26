@@ -13,10 +13,10 @@
                     <Title text="Verify Employee Documents"/>
                 </contentLeft>
                 <contentRight>
-                    <Button icon="sap-icon://home" tooltip="Home" press=".onNavTohome"/>
-                    <Button text="Show Verified" press=".onFilterVerified"/>
-                    <Button text="Show Rejected" press=".onFilterRejected"/>
-                    <Button text="Show Pending" press=".onFilterPending"/>
+                    <Button icon="sap-icon://home" tooltip="Home" press=".onNavTohome" />
+                    <Button text="Show Verified" press=".onFilterVerified" class="onFilterVerified"/>
+                    <Button text="Show Rejected" press=".onFilterRejected" class="onFilterRejected"/>
+                    <Button text="Show Pending" press=".onFilterPending" class="onFilterPending"/>
                 </contentRight>
             </Bar>
         </customHeader>

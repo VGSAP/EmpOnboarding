@@ -395,6 +395,36 @@ body {
   margin-top: 100rem;
 
 }
+.onFilterVerified {
+  border-radius: 20px; /* Rounded corners */
+  background-color: #007aff; /* Optional: SAP blue */
+  color: white;
+  padding: 0.5rem 1.5rem;
+  font-weight: bold;
+  box-shadow: none !important; /* Removes the shadow */
+  border: none; /* Optional: removes border */
+}
+
+.onFilterRejected {
+  border-radius: 20px; /* Rounded corners */
+  background-color: #007aff; /* Optional: SAP blue */
+  color: white;
+  padding: 0.5rem 1.5rem;
+  font-weight: bold;
+  box-shadow: none !important; /* Removes the shadow */
+  border: none; /* Optional: removes border */
+}
+.onFilterPending {
+  border-radius: 20px; /* Rounded corners */
+  background-color: #007aff; /* Optional: SAP blue */
+  color: white;
+  
+  font-weight: bold;
+  
+}
+
+
+
 
 .space {
   padding: 0.5%;
@@ -909,4 +939,5 @@ body {
     margin-bottom: 0.5rem; /* mb-2 */
     color: #737373; /* text-muted-foreground */
   }
+  
   
